@@ -1,0 +1,19 @@
+{% extends 'monie/base.html'%}
+
+{% block content %}
+<h1>Stephen</h1>
+    <div class="row">
+        {% for product in products %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">₦{{ product.price }}</p>
+                    <a href="{% url 'monie:detail' product.pk %}" class="btn btn-primary">Detail</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock content %}
